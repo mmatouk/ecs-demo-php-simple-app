@@ -23,6 +23,10 @@
                         $myfile = fopen("/var/www/my-vol/date", "r") or die("");
                         echo fread($myfile,filesize("/var/www/my-vol/date"));
                         fclose($myfile);
+
+                        foreach (getallheaders() as $name => $value) {
+                           echo "$name: $value\n";
+                        }
                 ?>
 
             </div>
@@ -33,13 +37,4 @@
     </body>
 
 </html>
-
-
-<?php
-
-foreach (getallheaders() as $name => $value) {
-    echo "$name: $value\n";
-}
-
-?>
 
