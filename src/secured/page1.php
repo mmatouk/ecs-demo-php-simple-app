@@ -24,7 +24,7 @@
                         echo fread($myfile,filesize("/var/www/my-vol/date"));
                         fclose($myfile);
 
-                        print_r($_SERVER)
+                        print_r($_SERVER);
 
     $headers = apache_request_headers();
 
