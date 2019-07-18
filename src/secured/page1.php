@@ -7,7 +7,7 @@
         <title>Simple PHP App - Page 1</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-        <style>body {margin-top: 40px; background-color: #3B5500;}</style>
+        <style>body {margin-top: 40px; background-color: #7E7700;}</style>
         <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet">
         <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     </head>
@@ -23,16 +23,10 @@
                         $myfile = fopen("/var/www/my-vol/date", "r") or die("");
                         echo fread($myfile,filesize("/var/www/my-vol/date"));
                         fclose($myfile);
-
-                        print_r($_SERVER);
-
-    $headers = apache_request_headers();
-
-    foreach ($headers as $header => $value) {
-        echo "$header: $value <br />\n";
-    }
                 ?>
-
+               <p>*********** <?php echo $_SERVER; ?></p>
+               <p>%%%%%%%%%%% <?php echo apache_request_headers(); ?></p>
+               <p>##########  <?php echo getallheaders(); ?></p>
             </div>
         </div>
 
