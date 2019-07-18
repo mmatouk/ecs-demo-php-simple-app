@@ -19,9 +19,16 @@
                 <h2>Congratulations</h2>
                 <p>Your PHP application is now running on a container in Amazon ECS. This is secured page #1</p>
                 <p>The container is running PHP version <?php echo phpversion(); ?>.</p>
-               <p>*********** <?php echo $_SERVER; ?></p>
-               <p>%%%%%%%%%%% <?php echo apache_request_headers(); ?></p>
-               <p>##########  <?php echo getallheaders(); ?></p>
+               <p>##########</p>
+
+<?php
+
+foreach (getallheaders() as $name => $value) {
+    echo "$name: $value\n";
+}
+
+?>
+
                 <?php
                         $myfile = fopen("/var/www/my-vol/date", "r") or die("");
                         echo fread($myfile,filesize("/var/www/my-vol/date"));
