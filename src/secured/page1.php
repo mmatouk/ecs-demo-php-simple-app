@@ -24,7 +24,7 @@
 <?php
 
 foreach (getallheaders() as $name => $value) {
-    echo "<b>$name:</b> $value\n";<br>
+    echo "<b>$name:</b> $value\n<br>";
 }
 
 ?>
